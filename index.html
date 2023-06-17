@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Weather App</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <div class="h-[100vh] bg-gradient-to-tr from-[#112d4e] to-[#3f72af] text-white">
+        <apan class="text-[2rem] font-bold mx-auto  pt-[20px]"> <center>WEATHER APP</center> </apan>
+        <div class="grid grid-flow-col place-content-center justify-evenly mt-20"> 
+            <button class=" focus:outline-none rounded-md px-3 py-[3px] font-semibol" id="b1">Your Weather</button>
+            <button class="focus:outline-none rounded-md px-3 py-[3px] font-semibold" id="b2">Search Weather</button>
+        </div>
+               <!-- grant location access -->
+        <div class="flex flex-col items-center -center mt-20 gap-6" id="GAccess">
+            <img src="assets/location.png" width="80" height="80" loading="lazy" alt="location">
+            <div  class="flex flex-col items-center">
+                <p class="text-[1.8rem] font-semibold">Grant Location Access</p>
+                <p class="text-[1rem] font-[500]">Allow access to get weather information</p>
+            </div>
+            <button class="focus:outline-none bg-[#3F72AF] rounded-md px-6 py-2 text-sm" GAccessBtn>GRANT ACCESS</button>
+        </div>
+
+        <!-- loading -->
+        <div class="grid place-content-center hidden" loading>
+            <img src="./assets/loading.gif" alt="loading" width="150" height="150">
+            <p class="place-self-center">Loading</p>
+        </div>
+
+        <!-- search -->
+        <form class="flex justify-center gap-2 mt-[3rem] mb-5 hidden " id="searchForm">
+            <input type="text" placeholder="Search for city..." class=" appearance-none focus:outline-2 focus:outline-dotted
+             focus:outline-white focus: outline- bg-[#9896967a] rounded-xl w-[32rem] font-semibold pl-6 h-[2.5rem]
+                           relative placeholder:absolute placeholder:top-2 placeholder:left-6 placeholder:font-bold" input>
+            <button type="submit" class="appearance-none focus:outline-none cursor-pointer rounded-full w-10 h-10 bg-[#eae2e217] grid place-content-center" search>
+                <img src="assets/search.png" alt="search" width="20" height="20">
+            </button>
+        </form>
+
+        <!-- weather details -->
+        <span class="hidden" id="details">
+            <div class="grid place-content-center">
+                <div class="flex justify-center gap-3 ">
+                    <p class="text-[2rem]" data-cityName></p>
+                    <img src="" alt="" width="50px" data-countryIcon>
+                </div>
+                <p class="text-[1.5rem] font-[200] place-self-center" data-weatherDesc></p>
+                <img src="" alt="img" loading="lazy" width="90px" height="90px" class=" place-self-center" data-weatherIcon>
+                <p class="text-[2.75rem] font-[700] place-self-center" data-temp></p>
+            </div>
+
+            <div class="grid grid-flow-col place-items-center  max-w-[50%] h-[25%] mx-auto gap-5" >
+                <div class="border grid place-items-center w-[100%] h-[100%] bg-[#9896967a]  rounded-md ">
+                    <img src="./assets/wind.png" alt="img" width="50px" height="50px">
+                    <p class="text=[1.15rem] font-[600]">WINDSPEED</p>
+                    <p class="text=[1rem] font-[200]" data-windspeed></p>
+                </div>
+    
+                <div class="border grid place-items-center w-[100%] h-[100%] bg-[#9896967a] rounded-md">
+                    <img src="./assets/humidity.png" alt="img" width="50px" height="50px">
+                    <p class="text=[1.15rem] font-[600]">HUMIDITY</p>
+                    <p class="text=[1rem] font-[200]" data-humidity></p>
+                </div>
+                <div class="border grid place-items-center w-[100%] h-[100%] bg-[#9896967a] rounded-md">
+                    <img src="./assets/cloud.png" alt="img" width="50px" height="50px">
+                    <p class="text=[1.15rem] font-[600]">CLOUDS</p>
+                    <p class="text=[1rem] font-[200]" data-cloudiness></p>
+                </div>           
+    
+            </div>
+        </span>
+        <center>
+            <img src="./assets/not-found.png" alt="Not Found" width="400px" class="hidden pt-7" notFound> 
+        </center>
+
+    </div>
+   <script src="script.js"></script>
+</body>
+</html>
