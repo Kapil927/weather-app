@@ -3,7 +3,7 @@ let btn2 = document.querySelector('#b2');
 let GAccess = document.querySelector('#GAccess');
 const loading = document.querySelector('[loading]');
 let weatherInfo = document.querySelector('#details');
-cont = GAccessBtn = document.querySelector('[GAccessBtn');
+cont GAccessBtn = document.querySelector('[GAccessBtn');
 const input  = document.querySelector('[input]');
 const search = document.querySelector('[search]');
 const searchForm = document.querySelector('#searchForm');
